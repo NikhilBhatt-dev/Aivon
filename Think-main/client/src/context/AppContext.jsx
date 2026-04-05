@@ -3,6 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { dummyUserData } from "../assets/assets";
 import { dummyChats } from '../assets/assets'; // Adjust path as needed
 
+import toast from 'react-hot-toast'
+import axios from 'axios'
+
+axios.defaults.baseURL = import.meta.env.VITE_SERVER_URL
 
 const AppContext = createContext()
 export const AppContextProvider = ({ children }) => {
@@ -10,9 +14,25 @@ export const AppContextProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [selectedChat, setSelectedchat] = useState(null);
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+    const [token, setToken] = useState(localStorage.getItem("token")||null)
+    const [loadingUser, setLoadingUser] = useState(true)
     
     const fetchUser = async () => {
-        setUser(dummyUserData)
+        try {
+          const {data} =   await axios.get('/api/user/data', {headers: {Authorization:token}})
+          if(data.success){
+            setUser(data.user)
+          }else{
+            toast.error(data.message)
+
+
+          }
+            
+        } catch (error) {
+            console.log(error)
+            
+        }
+       
     }
 
     const [chats, setChats] = useState([]);
