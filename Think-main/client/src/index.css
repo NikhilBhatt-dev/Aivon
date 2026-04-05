@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+/* Import Tailwind */
+@import "tailwindcss";
+
+/* Apply custom font globally */
+* {
+  font-family: "Outfit", sans-serif;
+}
+
+/* Custom Theme Colors */
+@theme {
+  --color-primary: #E6CCFF;
+}
+
+/* Hide scrollbar (corrected typo: webkit) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Reset Tailwind styles except pre/code */
+.reset-tw :not(pre):not(code) {
+  all: revert;
+}
+
+/* Loader animation delays (fixed nth-child syntax) */
+.loader div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loader div:nth-child(3) {
+  animation-delay: 0.4s;
+}
