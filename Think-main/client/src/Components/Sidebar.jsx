@@ -4,7 +4,6 @@ import { assets } from '../assets/assets'
 import moment from 'moment'
 // import { Navigate } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/logo.svg';
 
 
 
@@ -26,16 +25,16 @@ const Sidebar = ({ isMenuOpen, setIsMenuOpen }) => {
     h-screen overflow-y-auto`}>
 
 
-     <div className="flex items-center gap-2 text-white text-4xl font-bold py-2 px-3 rounded-lg shadow-lg transition duration-300 hover:shadow-blue-500/50">
+     
+      <div className="flex items-center justify-center gap-2 text-white text-4xl font-bold py-2 px-3 rounded-lg shadow-lg transition duration-300 hover:shadow-blue-500/50">
 
-  <img
-    src={logo}
-    alt="Logo"
-    className="w-10 h-10" // adjust size as needed
-  />
-  <span>THING</span>
-</div>
+        <img
+          src={assets.logo}
+          alt="Logo"
+          className="w-20 h-12 "
+        />
 
+      </div>
 
       {/* button*/}
 
@@ -132,5 +131,4 @@ const Sidebar = ({ isMenuOpen, setIsMenuOpen }) => {
 
 
 export default Sidebar
-
 

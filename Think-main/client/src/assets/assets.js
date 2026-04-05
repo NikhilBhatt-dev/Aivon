@@ -1,6 +1,4 @@
- import logo from "./logo.svg";
-import logo_full from "./logo_full.svg";
-import logo_full_dark from "./logo_full_dark.svg";
+ import aivonLogo from "./Aivon-logo.png";
 import search_icon from "./search_icon.svg";
 import user_icon from "./user_icon.svg";
 import theme_icon from "./theme_icon.svg";
@@ -31,8 +29,8 @@ import ai_image12 from "./ai_image12.jpg";
 import THINK from  "./THINK.png";
 
 export const assets = {
-    logo,
-    logo_full,
+    logo: aivonLogo,
+    logo_full: aivonLogo,
     search_icon,
     user_icon,
     theme_icon,
@@ -43,7 +41,7 @@ export const assets = {
     close_icon,
     bin_icon,
     logout_icon,
-    logo_full_dark,
+    logo_full_dark: aivonLogo,
     diamond_icon,
     gallery_icon
 };
